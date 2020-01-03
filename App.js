@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Greeting from './components/Greeting'
+// import Blink from './components/Blink'
 
 export default function App() {
   const pict = {
@@ -11,6 +12,7 @@ export default function App() {
       <View style={styles.container}>
         <Text style={styles.hello}>Hello</Text>
         <Greeting name="Martha"></Greeting>
+        {/* <Blink></Blink> */}
         <Image source={pict} style={{width: 193, height: 310}} />
       </View>
     </>
