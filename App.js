@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, useSelector, Provider} from 'react-redux'
+import store from './store'
 import Greeting from './components/Greeting'
 // import Blink from './components/Blink'
 
@@ -33,6 +34,8 @@ export default function App() {
 
   return (
     <>
+      <Provider store={store} >
+ 
       <ScrollView style={styles.scrollView}>
         {/* <Text style={styles.hello}>Indulgencia</Text>
         <Greeting name="Leonna"></Greeting> */}
@@ -44,6 +47,8 @@ export default function App() {
         </View>
 
       </ScrollView>
+             
+      </Provider>
     </>
   );
 

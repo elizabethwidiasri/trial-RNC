@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware} from 'redux'
 import Thunk from 'redux-thunk'
 
-const initialMakeup = {
+const initialCard = {
   cards : [],
   card : null
 }
 
-function tarotCard (state = initialMakeup, action) {
+function tarotCard (state = initialCard, action) {
   switch (action.type) {
     case 'SET_CARDS' : 
     return {
