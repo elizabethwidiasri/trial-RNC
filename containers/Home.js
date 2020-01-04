@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux'
 import {getCards} from '../store/action'
 import Greeting from '../components/Greeting'
 // import Blink from './components/Blink'
 
-export default function Home() {
+export default function Home(props) {
 
   const cards = useSelector(store => store.cards)
   const dispatch = useDispatch()
@@ -72,8 +72,12 @@ export default function Home() {
         {/* <Text style={{color: '#fff'}}>{JSON.stringify(cards)}</Text> */}
         <View style={{flexDirection: 'row', marginHorizontal: 20, alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'space-between',  marginTop: 30,  marginBottom: 50}}>
           { cards.length > 1 ? cards.map((card, i) => (
-              <Image key={'card' + i} source={{ uri : pics[i]}} style={styles.board} />
-          )) : <Text>Loading...</Text>
+              <TouchableOpacity key={'card' + i} style={styles.board} onPress={() => props.navigation.navigate('Detail')}>
+                <Image  source={{ uri : pics[i]}} style={{height: '100%', width: '100%'}} />
+              </TouchableOpacity>
+              )) 
+
+          : <Text style={{color: '#fff'}}>Loading...</Text>
         }
         </View>
       </ScrollView>
