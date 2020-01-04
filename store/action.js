@@ -10,11 +10,11 @@ export const getCards = () => async dispatch => {
 
 // export const getCard = (id) => async dispatch => {
 //   // setMakeup(null)
-//   const response = await fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=clinique`)
+//   const response = await fetch(`https://rws-cards-api.herokuapp.com/api/v1/cards/search?name_short=ar00`)
 //   const responseJSON = await response.json()
 //   const makeup = responseJSON.cards.filter(data => String(data.id) === String(id))[0]  
 //   dispatch({
-//     type: 'SET_MAKEUP',
+//     type: 'SET_CARD',
 //     makeup
 //   })
 // }

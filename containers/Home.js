@@ -68,23 +68,15 @@ export default function Home() {
 
   return (
     <>
-    
- 
       <ScrollView style={styles.scrollView}>
-        {/* <Text style={styles.hello}>Indulgencia</Text>
-        <Greeting name="Leonna"></Greeting> */}
-        {/* <Blink></Blink> */}
-
         {/* <Text style={{color: '#fff'}}>{JSON.stringify(cards)}</Text> */}
-
         <View style={{flexDirection: 'row', marginHorizontal: 20, alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'space-between',  marginTop: 30,  marginBottom: 50}}>
-          {cards.map((card, i) => (
+          { cards.length > 1 ? cards.map((card, i) => (
               <Image key={'card' + i} source={{ uri : pics[i]}} style={styles.board} />
-          ))}
+          )) : <Text>Loading...</Text>
+        }
         </View>
-
       </ScrollView>
-             
     </>
   );
 
