@@ -6,10 +6,29 @@ import Greeting from './components/Greeting'
 
 export default function App() {
 
-  const pic = {
-    fool : { uri :  'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/MarjorArcana-KristineTarot-22-black_360x.png?v=1554138716'},
-    emperor : { uri :  'https://i.pinimg.com/564x/fa/7c/0a/fa7c0a698634db94531aff4017d58ccd.jpg'},
-    knight : { uri :  'https://i.pinimg.com/564x/1b/67/ad/1b67ad35d1c1687b72fbf608241daf96.jpg'}
+  const pics = {
+    fool : { uri :  'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-01_black_360x.png?v=1548397922'},
+    magician: { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-02_black_360x.png?v=1548398300'},
+    high : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-03_black_360x.png?v=1548398381'},
+    empress : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-04_black_360x.png?v=1548398487'},
+    emperor : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-05_black_360x.png?v=1548398552'},
+    hierophant : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-06_black_360x.png?v=1548398614'},
+    lovers : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-07_black_360x.png?v=1548398651'},
+    chariot : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-08_black_360x.png?v=1548398705'},
+    strength : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-09_black_360x.png?v=1548398810'},
+    hermit : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-10_black_360x.png?v=1548398871'},
+    wheel : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-11_black_360x.png?v=1548398914'},
+    justice : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-12_black_360x.png?v=1548398985'},
+    hanged : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-13_black_360x.png?v=1548399036'},
+    death : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-14_black_360x.png?v=1548399090'},
+    temperance : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-15_black_360x.png?v=1548399149'},
+    devil : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-16_black_360x.png?v=1548399206'},
+    tower : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-17_black_360x.png?v=1548399259'},
+    star : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-18_black_360x.png?v=1548399303'},
+    moon : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-19_black_360x.png?v=1548399355'},
+    sun : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-20_black_360x.png?v=1548399402'},
+    judgement : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/MarjorArcana-KristineTarot-21-black_360x.png?v=1554138688'},
+    world : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/MarjorArcana-KristineTarot-22-black_360x.png?v=1554138716'}
   }
 
   return (
@@ -18,11 +37,10 @@ export default function App() {
         {/* <Text style={styles.hello}>Indulgencia</Text>
         <Greeting name="Leonna"></Greeting> */}
         {/* <Blink></Blink> */}
-        <View style={{flexDirection: 'row', marginHorizontal: 20, alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'space-between'}}>
-        <Image source={pic.fool} style={styles.board} />
-        <Image source={pic.knight} style={styles.board} />
-        <Image source={pic.emperor} style={styles.board} />
-        <Image source={pic.emperor} style={styles.board} />
+        <View style={{flexDirection: 'row', marginHorizontal: 20, alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'space-between',  marginTop: 30,  marginBottom: 50}}>
+          { Object.keys(pics).map((pic, i) => (
+            <Image key={'pic' + i} source={pics[pic]} style={styles.board} />
+          ))}
         </View>
 
       </ScrollView>
@@ -45,8 +63,9 @@ const styles = StyleSheet.create({
     marginBottom: 15 
   },
   scrollView: {
-    backgroundColor: '#ccc',
-    paddingTop: 20
+    backgroundColor: '#101010',
+    paddingTop: 20,
+ 
   },
   board: {
     width: '30%',

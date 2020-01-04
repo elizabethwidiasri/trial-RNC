@@ -2,21 +2,21 @@ import { createStore, applyMiddleware} from 'redux'
 import Thunk from 'redux-thunk'
 
 const initialMakeup = {
-  makeups : [],
-  makeup : null
+  cards : [],
+  card : null
 }
 
-function makeup(state = initialMakeup, action) {
+function tarotCard (state = initialMakeup, action) {
   switch (action.type) {
-    case 'SET_MAKEUPS' : 
+    case 'SET_CARDS' : 
     return {
       ...state,
-      makeups: action.makeups
+      cards: action.cards
     }
-    case 'SET_MAKEUP' :
+    case 'SET_CARD' :
       return {
         ...state,
-        makeup: action.makeup
+        card: action.card
       }
     default : 
       return state
@@ -24,6 +24,6 @@ function makeup(state = initialMakeup, action) {
 
 }
 
-let store = createStore(makeup, applyMiddleware(Thunk))
+let store = createStore(tarotCard, applyMiddleware(Thunk))
 
 export default store
