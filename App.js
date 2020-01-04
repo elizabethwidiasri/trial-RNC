@@ -2,15 +2,13 @@ import React from 'react'
 import {Provider} from 'react-redux'
 import { Text, View } from 'react-native'
 import store from './store'
-import Home from './containers/Home'
-import LandingPage from './components/LandingPage'
+import Navigation from './Navigation'
 
 export default function App() {
   return (
     <>
     <Provider store={store}>
-      <LandingPage />
-      {/* <Home /> */}
+      <Navigation />
     </Provider>
     </>
   )

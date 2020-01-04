@@ -8,13 +8,13 @@ import {
   Alert
 } from 'react-native'
 
-export default function LandingPage() {
+export default function LandingPage(props) {
   return (
     <>
     <View style={styles.container}>
       <Button 
         title="Witch, please!"
-        onPress={() => Alert.alert('Welcome to the world of unknown')}
+        onPress={() => props.navigation.navigate('Home') }
       />
     </View>
     </>
