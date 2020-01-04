@@ -72,7 +72,7 @@ export default function Home(props) {
         {/* <Text style={{color: '#fff'}}>{JSON.stringify(cards)}</Text> */}
         <View style={{flexDirection: 'row', marginHorizontal: 20, alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'space-between',  marginTop: 30,  marginBottom: 50}}>
           { cards.length > 1 ? cards.map((card, i) => (
-              <TouchableOpacity key={'card' + i} style={styles.board} onPress={() => props.navigation.navigate('Detail')}>
+              <TouchableOpacity key={'card' + i} style={styles.board} onPress={() => props.navigation.navigate('Detail', { card, pics: pics[i] } )}>
                 <Image  source={{ uri : pics[i]}} style={{height: '100%', width: '100%'}} />
               </TouchableOpacity>
               )) 

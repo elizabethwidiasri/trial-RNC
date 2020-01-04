@@ -1,11 +1,14 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, Button } from 'react-native'
 
-export default function Detail() {
+export default function Detail(props) {
   return (
     <>
       <View style={styles.container}>
-        <Text>Detail</Text>
+    <Image source={{uri: props.navigation.getParam('pics')}} style={{width: 200, aspectRatio: 4/7}}></Image>
+  <Text>Detail {JSON.stringify(props.navigation.getParam('card'))}</Text>
+  <Text>___________________________</Text>
+<Text>gambarnya {JSON.stringify(props.navigation.getParam('pics'))}</Text>
       </View>
     </>
   )

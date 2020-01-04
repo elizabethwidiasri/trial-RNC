@@ -15,10 +15,10 @@ const stackNavigator = createStackNavigator({
 
 const tabNavigator = createBottomTabNavigator({
   Reading,
-  Profile,
   Home : {
     screen : stackNavigator
-  }
+  },
+  Profile
 })
 
 const rootNavigator = createSwitchNavigator({
