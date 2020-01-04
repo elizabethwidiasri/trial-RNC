@@ -9,9 +9,35 @@ export default function Home() {
 
   const cards = useSelector(store => store.cards)
   const dispatch = useDispatch()
+
+  const pics = [
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-01_black_360x.png?v=1548397922',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-02_black_360x.png?v=1548398300',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-03_black_360x.png?v=1548398381',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-04_black_360x.png?v=1548398487',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-05_black_360x.png?v=1548398552',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-06_black_360x.png?v=1548398614',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-07_black_360x.png?v=1548398651',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-08_black_360x.png?v=1548398705',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-09_black_360x.png?v=1548398810',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-10_black_360x.png?v=1548398871',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-11_black_360x.png?v=1548398914',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-12_black_360x.png?v=1548398985',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-13_black_360x.png?v=1548399036',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-14_black_360x.png?v=1548399090',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-15_black_360x.png?v=1548399149',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-16_black_360x.png?v=1548399206',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-17_black_360x.png?v=1548399259',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-18_black_360x.png?v=1548399303',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-19_black_360x.png?v=1548399355',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-20_black_360x.png?v=1548399402',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/MarjorArcana-KristineTarot-21-black_360x.png?v=1554138688',
+    'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/MarjorArcana-KristineTarot-22-black_360x.png?v=1554138716'
+
+ ]
   
 
-  const pics = {
+  const pict = {
     fool : { uri :  'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-01_black_360x.png?v=1548397922'},
     magician: { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-02_black_360x.png?v=1548398300'},
     high : { uri : 'https://cdn.shopify.com/s/files/1/0032/1801/4308/products/Marjor-Arcana-03_black_360x.png?v=1548398381'},
@@ -48,17 +74,13 @@ export default function Home() {
         {/* <Text style={styles.hello}>Indulgencia</Text>
         <Greeting name="Leonna"></Greeting> */}
         {/* <Blink></Blink> */}
+
+        {/* <Text style={{color: '#fff'}}>{JSON.stringify(cards)}</Text> */}
+
         <View style={{flexDirection: 'row', marginHorizontal: 20, alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'space-between',  marginTop: 30,  marginBottom: 50}}>
-          { Object.keys(pics).map((pic, i) => (
-            <Image key={'pic' + i} source={pics[pic]} style={styles.board} />
-          ))}
-          {/* <Text style={{color: '#fff'}}>{JSON.stringify(cards)}</Text> */}
-          
           {cards.map((card, i) => (
-            <View>
-              <Text key={'card' + i} style={{color: '#fff'}}>{card.name}</Text>
-            </View>
-          ) )}
+              <Image key={'card' + i} source={{ uri : pics[i]}} style={styles.board} />
+          ))}
         </View>
 
       </ScrollView>

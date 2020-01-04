@@ -1,10 +1,10 @@
 export const getCards = () => async dispatch => {
   const response = await fetch(`https://rws-cards-api.herokuapp.com/api/v1/cards`)
   const responseJSON = await response.json()
-  
+  const data = responseJSON.cards.filter(data => data.type === 'major').sort((a, b) => (a.value_int > b.value_int) ? 1 : -1 )
   dispatch({
     type: 'SET_CARDS',
-    cards: responseJSON.cards.filter(data => data.type === 'major')
+    cards: data
   })
 }
 
